@@ -1,6 +1,8 @@
-FROM debian:bullseye-slim AS final
+FROM debian:bullseye AS final
 # Instalar dependências do runtime
 RUN apt-get update && apt-get install -y \
+    man-db \
+    procps \
     ca-certificates \
     tzdata \
     bash \
@@ -11,6 +13,8 @@ RUN apt-get update && apt-get install -y \
     g++ \
     scons \
     && apt-get clean
+
+RUN apt-get update && apt-get install -y procps && free -h
 
 WORKDIR /src
 

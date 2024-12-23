@@ -19,5 +19,5 @@ logs:
 
 .PHONY: terminal
 
-terminal:
+debian:
 	docker exec -it linux bash
