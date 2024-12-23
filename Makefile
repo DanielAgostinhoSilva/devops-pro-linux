@@ -17,7 +17,7 @@ clean:
 logs:
 	docker compose -p ${STACK_NAME} logs -f
 
-.PHONY: terminal
+.PHONY: debian
 
 debian:
 	docker exec -it linux bash
